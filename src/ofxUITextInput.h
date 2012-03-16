@@ -325,7 +325,7 @@ public:
 		textstring = ""; 
 		string temp = ""; 
 		
-		for(int i = 0; i < s.length(); i++)
+		for(int i = 0; i < (int)s.length(); i++)
 		{
 			temp+=s.at(i); 
 			float newWidth = label->getStringWidth(temp); 

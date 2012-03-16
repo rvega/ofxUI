@@ -101,7 +101,7 @@ public:
     void initToggles(vector<string> &items, int _size)
     {
         float ty = 20;
-		for(int i = 0; i < items.size(); i++)
+		for(int i = 0; i < (int)items.size(); i++)
 		{
 			string tname = items[i]; 
 			ofxUILabelToggle *ltoggle; 
@@ -153,7 +153,7 @@ public:
         paddedRect->width = rect->width+padding*2.0;          
                     
 		float yt = rect->height;
-		for(int i = 0; i < toggles.size(); i++)
+		for(int i = 0; i < (int)toggles.size(); i++)
 		{
 			ofxUILabelToggle *t = toggles[i]; 			
 			t->setParent(this); 
@@ -211,7 +211,7 @@ public:
     {
         visible = _visible; 
         label->setVisible(visible); 
-        for(int i = 0; i < toggles.size(); i++)
+        for(int i = 0; i < (int)toggles.size(); i++)
         {
             ofxUILabelToggle * toggle = (ofxUILabelToggle *) toggles[i];
             toggle->setVisible(visible); 
@@ -220,7 +220,7 @@ public:
     
     void setToggleVisibility(bool _value)
     {
-        for(int i = 0; i < toggles.size(); i++)
+        for(int i = 0; i < (int)toggles.size(); i++)
         {
             ofxUILabelToggle * toggle = (ofxUILabelToggle *) toggles[i];
             toggle->setVisible(_value); 
@@ -259,7 +259,7 @@ public:
     
 	void activateToggle(string _name)
 	{
-		for(int i = 0; i < toggles.size(); i++)
+		for(int i = 0; i < (int)toggles.size(); i++)
 		{
 			ofxUILabelToggle *t = toggles[i]; 			
 			if(!(t->getName().compare(_name.c_str())))

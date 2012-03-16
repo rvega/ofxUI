@@ -77,7 +77,7 @@ public:
 	{
 		draw_padded_rect = _draw_padded_rect; 
         label->setDrawPadding(false);
-		for(int i = 0; i < toggles.size(); i++)
+		for(int i = 0; i < (int)toggles.size(); i++)
 		{
 			ofxUIToggle *t = toggles[i]; 			
             t->setDrawPadding(false);             
@@ -88,7 +88,7 @@ public:
 	{
 		draw_padded_rect_outline = _draw_padded_rect_outline; 
         label->setDrawPaddingOutline(false);
-		for(int i = 0; i < toggles.size(); i++)
+		for(int i = 0; i < (int)toggles.size(); i++)
 		{
 			ofxUIToggle *t = toggles[i]; 			
             t->setDrawPaddingOutline(false);             
@@ -104,7 +104,7 @@ public:
     {
         visible = _visible; 
         label->setVisible(visible);         
-		for(int i = 0; i < toggles.size(); i++)
+		for(int i = 0; i < (int)toggles.size(); i++)
 		{
 			ofxUIToggle *t = toggles[i]; 			
             t->setVisible(visible);             
@@ -113,7 +113,7 @@ public:
     
 	void activateToggle(string _name)
 	{
-		for(int i = 0; i < toggles.size(); i++)
+		for(int i = 0; i < (int)toggles.size(); i++)
 		{
 			ofxUIToggle *t = toggles[i]; 			
 			if(!(t->getName().compare(_name.c_str())))
@@ -135,7 +135,7 @@ public:
         float tWidth = cols*(toggles[0]->getRect()->width)+cols*padding; 
 		float tHeight = rows*(toggles[0]->getRect()->height)+rows*padding; 
 
-        for(int i = 0; i < toggles.size(); i++)
+        for(int i = 0; i < (int)toggles.size(); i++)
 		{
 			ofxUIToggle *t = toggles[i]; 			
 			t->setParent(this); 
@@ -157,7 +157,7 @@ public:
     
     void setAllToggles(bool _value)
     {
-		for(int i = 0; i < toggles.size(); i++)
+		for(int i = 0; i < (int)toggles.size(); i++)
 		{
 			ofxUIToggle *t = toggles[i]; 			
             t->setValue(_value);
@@ -166,13 +166,13 @@ public:
     
     void setAllTogglesAndTrigger(bool _value)
     {
-		for(int i = 0; i < toggles.size(); i++)
+		for(int i = 0; i < (int)toggles.size(); i++)
 		{
 			ofxUIToggle *t = toggles[i]; 			
             t->setValue(_value);
         }        
         
-        for(int i = 0; i < toggles.size(); i++)
+        for(int i = 0; i < (int)toggles.size(); i++)
 		{
             triggerEvent(toggles[i]); 
         }        
@@ -180,7 +180,7 @@ public:
     
     void setToggle(int x, int y, bool _value)
     {
-        if(x*y < toggles.size())
+        if(x*y < (int)toggles.size())
         {
             toggles[x+y*rows]->setValue(_value);
         }

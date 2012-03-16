@@ -37,7 +37,7 @@ public:
 		delete font_large; 
 		delete font_medium;
 		delete font_small;		
-		for(int i = 0; i < widgets.size(); i++)
+		for(int i = 0; i < (int)widgets.size(); i++)
 		{
 			ofxUIWidget *w = widgets[i]; 
 			delete w; 
@@ -92,7 +92,7 @@ public:
     void saveSettings(string fileName)
     {
         ofxXmlSettings *XML = new ofxXmlSettings(); 
-        for(int i = 0; i < widgetsWithState.size(); i++)
+        for(int i = 0; i < (int)widgetsWithState.size(); i++)
         {                
             int index = XML->addTag("Widget");
             if(XML->pushTag("Widget", index))
@@ -506,7 +506,7 @@ public:
     
     void update()
     {		
-		for(int i = 0; i < widgets.size(); i++)
+		for(int i = 0; i < (int)widgets.size(); i++)
 		{
 			widgets[i]->update(); 	
 		}		
@@ -534,7 +534,7 @@ public:
         
         drawOutlineHighlight();
 
-		for(int i = widgets.size()-1; i >= 0; i--)
+		for(int i = (int)widgets.size()-1; i >= 0; i--)
 		{
             if(widgets[i]->isVisible())
             {
@@ -582,7 +582,7 @@ public:
 	{		
         if(rect->inside(touch.x, touch.y))
         {
-			for(int i = 0; i < widgets.size(); i++)
+			for(int i = 0; i < (int)widgets.size(); i++)
 			{
 				if(widgets[i]->isVisible())	widgets[i]->touchDown(touch); 
 			}
@@ -591,7 +591,7 @@ public:
     
 	void touchMoved(ofTouchEventArgs& touch) 
 	{
-        for(int i = 0; i < widgets.size(); i++)
+        for(int i = 0; i < (int)widgets.size(); i++)
         {
             if(widgets[i]->isVisible())	widgets[i]->touchMoved(touch);
         }
@@ -599,7 +599,7 @@ public:
     
 	void touchUp(ofTouchEventArgs& touch) 
 	{
-        for(int i = 0; i < widgets.size(); i++)
+        for(int i = 0; i < (int)widgets.size(); i++)
         {
             if(widgets[i]->isVisible())	widgets[i]->touchUp(touch); 
         }
@@ -609,7 +609,7 @@ public:
 	{
         if(rect->inside(touch.x, touch.y))
         {
-			for(int i = 0; i < widgets.size(); i++)
+			for(int i = 0; i < (int)widgets.size(); i++)
 			{
 				if(widgets[i]->isVisible())	widgets[i]->touchDoubleTap(touch); 
 			}
@@ -620,7 +620,7 @@ public:
 	{		
         if(rect->inside(touch.x, touch.y))
         {
-        	for(int i = 0; i < widgets.size(); i++)
+        	for(int i = 0; i < (int)widgets.size(); i++)
 			{
 				if(widgets[i]->isVisible())	widgets[i]->touchCancelled(touch); 
 			}
@@ -653,7 +653,7 @@ public:
     {
         if(rect->inside(x, y))
         {
-			for(int i = 0; i < widgets.size(); i++)
+			for(int i = 0; i < (int)widgets.size(); i++)
 			{                
 				if(widgets[i]->isVisible()) widgets[i]->mouseMoved(x, y); 
 			}
@@ -662,7 +662,7 @@ public:
     
     void mouseDragged(int x, int y, int button) 
     {		
-        for(int i = 0; i < widgets.size(); i++)
+        for(int i = 0; i < (int)widgets.size(); i++)
         {
             if(widgets[i]->isVisible())	widgets[i]->mouseDragged(x, y, button); 
         }                
@@ -672,7 +672,7 @@ public:
     {
         if(rect->inside(x, y))
         {
-			for(int i = 0; i < widgets.size(); i++)
+			for(int i = 0; i < (int)widgets.size(); i++)
 			{
 				if(widgets[i]->isVisible()) widgets[i]->mousePressed(x, y, button); 
 			}
@@ -681,7 +681,7 @@ public:
     
     void mouseReleased(int x, int y, int button) 
     {		        
-        for(int i = 0; i < widgets.size(); i++)
+        for(int i = 0; i < (int)widgets.size(); i++)
         {
             if(widgets[i]->isVisible()) widgets[i]->mouseReleased(x, y, button); 
         }    
@@ -699,7 +699,7 @@ public:
 
     void keyPressed(int key) 
     {
-        for(int i = 0; i < widgets.size(); i++)
+        for(int i = 0; i < (int)widgets.size(); i++)
 		{
 			widgets[i]->keyPressed(key); 
 		}		
@@ -707,7 +707,7 @@ public:
     
     void keyReleased(int key) 
     {
-		for(int i = 0; i < widgets.size(); i++)
+		for(int i = 0; i < (int)widgets.size(); i++)
 		{
 			widgets[i]->keyReleased(key); 
 		}	
@@ -720,7 +720,7 @@ public:
     
     void windowResized(int w, int h) 
     {
-		for(int i = 0; i < widgets.size(); i++)
+		for(int i = 0; i < (int)widgets.size(); i++)
 		{
 			widgets[i]->windowResized(w, h); 
 		}
@@ -858,7 +858,7 @@ public:
 			pushbackWidget(label); 		
             
             vector<ofxUILabelToggle *> toggles = list->getToggles(); 
-			for(int i = 0; i < toggles.size(); i++)
+			for(int i = 0; i < (int)toggles.size(); i++)
 			{
 				ofxUILabelToggle *t = toggles[i]; 
 				ofxUILabel *l2 = (ofxUILabel *) t->getLabel();
@@ -905,7 +905,7 @@ public:
 			
 			vector<ofxUIToggle *> toggles = radio->getToggles(); 
 			
-			for(int i = 0; i < toggles.size(); i++)
+			for(int i = 0; i < (int)toggles.size(); i++)
 			{
 				ofxUIToggle *t = toggles[i]; 
 				ofxUILabel *l2 = (ofxUILabel *) t->getLabel();
@@ -925,7 +925,7 @@ public:
 			
 			vector<ofxUIToggle *> toggles = matrix->getToggles(); 
 			
-			for(int i = 0; i < toggles.size(); i++)
+			for(int i = 0; i < (int)toggles.size(); i++)
 			{
 				ofxUIToggle *t = toggles[i]; 
 				ofxUILabel *l2 = (ofxUILabel *) t->getLabel();
@@ -1173,49 +1173,49 @@ public:
 		switch (_target) 
 		{
 			case OFX_UI_WIDGET_COLOR_BACK:
-				for(int i = 0; i < widgets.size(); i++)
+				for(int i = 0; i < (int)widgets.size(); i++)
 				{
 					widgets[i]->setColorBack(_color); 
 				}				
 				break;
 
 			case OFX_UI_WIDGET_COLOR_OUTLINE:
-				for(int i = 0; i < widgets.size(); i++)
+				for(int i = 0; i < (int)widgets.size(); i++)
 				{
 					widgets[i]->setColorOutline(_color); 
 				}				
 				break;
 			
 			case OFX_UI_WIDGET_COLOR_OUTLINE_HIGHLIGHT:
-				for(int i = 0; i < widgets.size(); i++)
+				for(int i = 0; i < (int)widgets.size(); i++)
 				{
 					widgets[i]->setColorOutlineHighlight(_color); 
 				}				
 				break;
 			
 			case OFX_UI_WIDGET_COLOR_FILL:
-				for(int i = 0; i < widgets.size(); i++)
+				for(int i = 0; i < (int)widgets.size(); i++)
 				{
 					widgets[i]->setColorFill(_color); 
 				}				
 				break;
 			
 			case OFX_UI_WIDGET_COLOR_FILL_HIGHLIGHT:
-				for(int i = 0; i < widgets.size(); i++)
+				for(int i = 0; i < (int)widgets.size(); i++)
 				{
 					widgets[i]->setColorFillHighlight(_color); 
 				}					
 				break;
                 
 			case OFX_UI_WIDGET_COLOR_PADDED:
-				for(int i = 0; i < widgets.size(); i++)
+				for(int i = 0; i < (int)widgets.size(); i++)
 				{
 					widgets[i]->setColorPadded(_color); 
 				}					
 				break;
                 
 			case OFX_UI_WIDGET_COLOR_PADDED_OUTLINE:
-				for(int i = 0; i < widgets.size(); i++)
+				for(int i = 0; i < (int)widgets.size(); i++)
 				{
 					widgets[i]->setColorPaddedOutline(_color); 
 				}					
@@ -1248,7 +1248,7 @@ public:
 
     void setDrawWidgetPadding(bool _draw_padded_rect)
     {
-		for(int i = 0; i < widgets.size(); i++)
+		for(int i = 0; i < (int)widgets.size(); i++)
 		{
 			widgets[i]->setDrawPadding(_draw_padded_rect); 
 		}		        
@@ -1257,7 +1257,7 @@ public:
 	void setDrawPaddingOutline(bool _draw_padded_rect_outline)
 	{
 		draw_padded_rect_outline = _draw_padded_rect_outline; 
-		for(int i = 0; i < widgets.size(); i++)
+		for(int i = 0; i < (int)widgets.size(); i++)
 		{
 			widgets[i]->setDrawPaddingOutline(_draw_padded_rect_outline); 
 		}		
@@ -1265,7 +1265,7 @@ public:
 
     void setDrawWidgetPaddingOutline(bool _draw_padded_rect_outline)
 	{
-		for(int i = 0; i < widgets.size(); i++)
+		for(int i = 0; i < (int)widgets.size(); i++)
 		{
 			widgets[i]->setDrawPaddingOutline(_draw_padded_rect_outline); 
 		}		
@@ -1280,7 +1280,7 @@ public:
     vector<ofxUIWidget*> getWidgetsOfType(ofxWidgetType type)
     {
         vector<ofxUIWidget*> widgetToReturn; 
-        for(int i = 0; i < widgets.size(); i++)
+        for(int i = 0; i < (int)widgets.size(); i++)
 		{
             if(widgets[i]->getKind() == type)
             {

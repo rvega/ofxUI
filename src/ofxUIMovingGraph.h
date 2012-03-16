@@ -98,7 +98,7 @@ public:
     {
         buffer.push_back(_point); 
                 
-        if( buffer.size() >= bufferSize )
+        if( (int)buffer.size() >= bufferSize )
         {
             buffer.erase(buffer.begin(), buffer.begin()+1);
         }	        

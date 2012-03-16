@@ -58,7 +58,7 @@ public:
 		label->setParent(label); 
 		label->setRectParent(rect); 
         
-		for(int i = 0; i < names.size(); i++)
+		for(int i = 0; i < (int)names.size(); i++)
 		{
 			string tname = names[i]; 
 			ofxUIToggle *toggle = new ofxUIToggle(0,0, w, h, false, tname); 
@@ -71,7 +71,7 @@ public:
 	{
 		draw_padded_rect = _draw_padded_rect; 
         label->setDrawPadding(false);
-		for(int i = 0; i < toggles.size(); i++)
+		for(int i = 0; i < (int)toggles.size(); i++)
 		{
 			ofxUIToggle *t = toggles[i]; 			
             t->setDrawPadding(false);             
@@ -82,7 +82,7 @@ public:
 	{
 		draw_padded_rect_outline = _draw_padded_rect_outline; 
         label->setDrawPaddingOutline(false);
-		for(int i = 0; i < toggles.size(); i++)
+		for(int i = 0; i < (int)toggles.size(); i++)
 		{
 			ofxUIToggle *t = toggles[i]; 			
             t->setDrawPaddingOutline(false);             
@@ -98,7 +98,7 @@ public:
     {
         visible = _visible; 
         label->setVisible(visible); 
-		for(int i = 0; i < toggles.size(); i++)
+		for(int i = 0; i < (int)toggles.size(); i++)
 		{
 			ofxUIToggle *t = toggles[i]; 			
             t->setVisible(visible);             
@@ -106,7 +106,7 @@ public:
     }
 	void activateToggle(string _name)
 	{
-		for(int i = 0; i < toggles.size(); i++)
+		for(int i = 0; i < (int)toggles.size(); i++)
 		{
 			ofxUIToggle *t = toggles[i]; 			
 			if(!(t->getName().compare(_name.c_str())))
@@ -130,7 +130,7 @@ public:
 		float xt = 0; 
 		float yt = label->getPaddingRect()->height;
 		
-		for(int i = 0; i < toggles.size(); i++)
+		for(int i = 0; i < (int)toggles.size(); i++)
 		{
 			ofxUIToggle *t = toggles[i]; 			
 			t->setParent(this); 
